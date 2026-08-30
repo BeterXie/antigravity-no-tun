@@ -1,12 +1,12 @@
-# Antigravity Windows Launcher
+# Antigravity NO TUN
 
-一个面向 Windows 的 PowerShell 启动脚本，帮助 Antigravity 在本机代理环境下稳定启动。
+一个面向 Windows 的启动脚本：在存在可用本地 HTTP(S) 代理时，不需要开启 TUN 模式也能正常使用 Antigravity。
 
 ## 为什么写这个脚本
 
 我们在 Windows 上使用 Antigravity 时遇到过这样的情况：代理节点本身可用，但 Antigravity 仍然可能白屏、长时间加载，或者进入界面后语言服务无法正常连接。尤其是在切换系统代理、Clash/Mihomo 等本地代理端口和 TUN 模式时，手工排查安装路径、代理端口和进程环境比较繁琐。
 
-实际使用中，Antigravity 不一定需要把所有流量都交给 TUN。更稳定的方式通常是：让应用的本地页面保持直连，只为需要访问外部服务的子进程提供可用的 HTTP(S) 代理。这个项目就是把这套启动流程自动化，减少每次启动前手动切换代理和反复确认的步骤。
+实际使用中，Antigravity 不一定需要把所有流量都交给 TUN。更稳定的方式通常是：让应用的本地页面保持直连，只为需要访问外部服务的子进程提供可用的 HTTP(S) 代理。这个项目就是把这套启动流程自动化，让 Antigravity 在不开 TUN 的情况下也能使用，减少每次启动前手动切换代理和反复确认的步骤。
 
 ## 解决什么问题
 
@@ -15,6 +15,12 @@
 - 代理可能导致 `localhost`、`127.0.0.1` 等本地页面访问异常，脚本为本地地址保留直连。
 - 语言服务和外部请求需要代理，脚本只对启动的 Antigravity 进程及其子进程设置代理环境。
 - 没有可用 HTTP 代理时，脚本不强行修改系统设置，而是回退到系统直连或 TUN。
+
+## NO TUN 的含义
+
+这里的“NO TUN”指的是：当 Clash、Mihomo 或其他代理核心提供了可用的本地 HTTP(S) 代理时，Antigravity 可以不依赖 TUN 模式运行。脚本不会关闭、修改或接管用户的 TUN 设置。
+
+如果用户只有 SOCKS5 代理、只有 TUN 路由，或者当前网络必须依赖 TUN 才能连通外部服务，脚本不会把这种环境强行变成“无 TUN”；它会跳过无法验证的 SOCKS 代理，并回退到系统直连或现有 TUN。
 
 ## 功能
 
@@ -36,6 +42,10 @@
 脚本会先显示识别到的 Antigravity 路径和可用代理。首次加载可能需要等待约一分钟。
 
 脚本兼容 Windows 自带的 Windows PowerShell 5.1，也兼容 PowerShell 7，不要求额外安装 PowerShell 7。Windows 10/11 通常已经自带 Windows PowerShell 5.1。
+
+## Antigravity CLI 登录支持
+
+当前版本只负责启动 Antigravity 图形界面，不调用或实现 Antigravity CLI 登录，也不会读取、保存或代管账号凭据。CLI 登录需要官方 CLI 的明确命令和认证流程；在确认这些信息前，项目不会把 CLI 登录写成已支持功能。
 
 ## 代理识别顺序
 
