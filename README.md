@@ -1,6 +1,6 @@
 # Antigravity NO TUN
 
-一个面向 Windows 的启动脚本：在存在可用本地 HTTP(S) 代理时，不需要开启 TUN 模式也能正常使用 Antigravity。
+一个面向 Windows 的启动脚本：在存在可用本地 HTTP(S) 代理时，不需要开启 TUN 模式也能正常启动和使用 `Antigravity.exe` 图形客户端。
 
 ## 为什么写这个脚本
 
@@ -45,7 +45,7 @@
 
 ## Antigravity CLI 登录支持
 
-当前版本只负责启动 Antigravity 图形界面，不调用或实现 Antigravity CLI 登录，也不会读取、保存或代管账号凭据。CLI 登录需要官方 CLI 的明确命令和认证流程；在确认这些信息前，项目不会把 CLI 登录写成已支持功能。
+当前版本只支持启动 `Antigravity.exe` 图形界面，不包含 Antigravity CLI 登录，也不会读取、保存或代管账号凭据。CLI 登录会在未来确有需求且官方 CLI 命令明确后再单独评估。
 
 ## 代理识别顺序
 
