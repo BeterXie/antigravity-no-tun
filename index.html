@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#07080a">
-  <meta name="description" data-i18n-content="page.description" content="Antigravity NO TUN: launch and use Antigravity.exe without enabling TUN when a usable local HTTP(S) proxy is available.">
-  <title data-i18n="page.title">Antigravity NO TUN — Windows launcher</title>
+  <meta name="description" data-i18n-content="page.description" content="Antigravity NO TUN: start Antigravity.exe on Windows without TUN when a local HTTP(S) proxy is available.">
+  <title data-i18n="page.title">Antigravity NO TUN — Windows launcher for Antigravity.exe</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
@@ -40,16 +40,16 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> <span data-i18n="hero.eyebrow">WINDOWS LAUNCHER</span> <span class="eyebrow-divider">/</span> v1.0.0</p>
-          <h1><span data-i18n="hero.titleLine">No TUN.</span><br><em data-i18n="hero.titleEm">Just launch</em> <span data-i18n="hero.titleName">Antigravity.</span></h1>
-          <p class="hero-lede"><span data-i18n="hero.ledeBefore">Automatically find</span> <code>Antigravity.exe</code> <span data-i18n="hero.ledeAfter">and a local HTTP(S) proxy. Keep local pages direct and route external services through a verified proxy.</span></p>
+          <h1><span data-i18n="hero.titleLine">No TUN.</span><br><em data-i18n="hero.titleEm">Start</em> <span data-i18n="hero.titleName">Antigravity.</span></h1>
+          <p class="hero-lede"><span data-i18n="hero.ledeBefore">Automatically find</span> <code>Antigravity.exe</code> <span data-i18n="hero.ledeAfter">and a working local HTTP(S) proxy. Keep local addresses direct. Pass the proxy to Antigravity.</span></p>
           <div class="hero-actions">
             <a class="button button-primary" href="https://github.com/BeterXie/antigravity-no-tun/raw/refs/heads/main/Start-Antigravity.ps1" download><span data-i18n="hero.download">Download launcher</span> <span aria-hidden="true">↓</span></a>
             <a class="button button-secondary" href="https://github.com/BeterXie/antigravity-no-tun/releases/tag/v1.0.0" target="_blank" rel="noreferrer"><span data-i18n="hero.release">View release</span> <span aria-hidden="true">↗</span></a>
           </div>
-          <div class="hero-facts" aria-label="Project facts" data-i18n-aria-label="hero.facts">
+          <div class="hero-facts" aria-label="Key points" data-i18n-aria-label="hero.facts">
             <span><i class="fact-dot fact-green" aria-hidden="true"></i>PowerShell 5.1+</span>
             <span><i class="fact-dot fact-blue" aria-hidden="true"></i><span data-i18n="hero.guiOnly">GUI only</span></span>
-            <span><i class="fact-dot fact-muted" aria-hidden="true"></i><span data-i18n="hero.noSystemChanges">No system changes</span></span>
+            <span><i class="fact-dot fact-muted" aria-hidden="true"></i><span data-i18n="hero.noSystemChanges">Leaves system settings alone</span></span>
           </div>
         </div>
 
@@ -62,70 +62,70 @@
             </div>
             <div class="command-input">
               <span class="command-icon" aria-hidden="true">⌁</span>
-              <span data-i18n="mockup.environmentCheck">Antigravity environment check</span>
+              <span data-i18n="mockup.environmentCheck">Checking Antigravity</span>
               <span class="keycap">PS</span>
             </div>
             <div class="check-list">
               <div class="check-row check-row-active">
                 <span class="check-icon check-icon-green" aria-hidden="true">✓</span>
-                <span class="check-copy"><strong>Antigravity.exe</strong><small data-i18n="mockup.installationDetected">installation detected</small></span>
+                <span class="check-copy"><strong>Antigravity.exe</strong><small data-i18n="mockup.installationDetected">app found</small></span>
                 <span class="check-tag tag-green" data-i18n="mockup.found">FOUND</span>
               </div>
               <div class="check-row">
                 <span class="check-icon check-icon-blue" aria-hidden="true">↗</span>
-                <span class="check-copy"><strong>127.0.0.1:7897</strong><small data-i18n="mockup.proxyVerified">HTTP proxy · verified</small></span>
+                <span class="check-copy"><strong>127.0.0.1:7897</strong><small data-i18n="mockup.proxyVerified">HTTP proxy · responding</small></span>
                 <span class="check-tag tag-blue" data-i18n="mockup.proxy">PROXY</span>
               </div>
               <div class="check-row">
                 <span class="check-icon check-icon-yellow" aria-hidden="true">↳</span>
-                <span class="check-copy"><strong>localhost / ::1</strong><small data-i18n="mockup.localDirect">local traffic · direct</small></span>
-                <span class="check-tag tag-yellow" data-i18n="mockup.bypass">BYPASS</span>
+                <span class="check-copy"><strong>localhost / ::1</strong><small data-i18n="mockup.localDirect">local addresses · direct</small></span>
+                <span class="check-tag tag-yellow" data-i18n="mockup.bypass">DIRECT</span>
               </div>
             </div>
             <div class="command-footer">
-              <span><b class="prompt">›</b> <span data-i18n="mockup.launchComplete">launch sequence complete</span><span class="cursor" aria-hidden="true"></span></span>
+              <span><b class="prompt">›</b> <span data-i18n="mockup.launchComplete">ready to start</span><span class="cursor" aria-hidden="true"></span></span>
               <span class="keycap">ENTER</span>
             </div>
           </div>
           <div class="signal-card signal-card-proxy">
             <span class="signal-icon" aria-hidden="true">↗</span>
-            <span><small data-i18n="mockup.httpProxy">HTTP proxy</small><strong data-i18n="mockup.verified">verified</strong></span>
+            <span><small data-i18n="mockup.httpProxy">HTTP proxy</small><strong data-i18n="mockup.verified">ready</strong></span>
           </div>
           <div class="signal-card signal-card-tun">
             <span class="signal-icon signal-icon-muted" aria-hidden="true">◌</span>
-            <span><small data-i18n="mockup.tunMode">TUN mode</small><strong data-i18n="mockup.optional">optional</strong></span>
+            <span><small data-i18n="mockup.tunMode">TUN mode</small><strong data-i18n="mockup.optional">not required</strong></span>
           </div>
         </div>
       </div>
-      <a class="scroll-cue" href="#why"><span data-i18n="hero.scroll">Scroll to explore</span><i aria-hidden="true">↓</i></a>
+      <a class="scroll-cue" href="#why"><span data-i18n="hero.scroll">See how it works</span><i aria-hidden="true">↓</i></a>
     </section>
 
     <section class="section section-problem" id="why">
       <div class="container">
         <div class="section-heading section-heading-wide">
-          <p class="section-kicker" data-i18n="section.whyKicker">01 / WHY THIS EXISTS</p>
-          <h2><span data-i18n="why.titleLine">A working node.</span><br><span data-i18n="why.titleQuestion">Still a white screen?</span></h2>
-          <p data-i18n="why.intro">The node is not always the problem. When proxy software, TUN routing, and local app pages share one path, unclear traffic boundaries can stall the launch screen or break the language service connection.</p>
+          <p class="section-kicker" data-i18n="section.whyKicker">01 / WHY THIS SCRIPT</p>
+          <h2><span data-i18n="why.titleLine">Proxy works.</span><br><span data-i18n="why.titleQuestion">Antigravity is still blank.</span></h2>
+          <p data-i18n="why.intro">Antigravity can stay blank even when the proxy works. If the proxy also catches localhost traffic, the language service may fail to connect.</p>
         </div>
 
         <div class="feature-grid">
           <article class="feature-card">
             <div class="feature-top"><span class="feature-number">01</span><span class="feature-symbol symbol-red" aria-hidden="true">□</span></div>
-            <h3 data-i18n="why.card1Title">Local traffic takes the wrong route</h3>
-            <p data-i18n="why.card1Body"><code>localhost</code>, <code>127.0.0.1</code>, and <code>::1</code> should stay direct. Proxy settings can still affect them, causing white screens or timeouts.</p>
+            <h3 data-i18n="why.card1Title">Keep local traffic local</h3>
+            <p data-i18n="why.card1Body"><code>localhost</code>, <code>127.0.0.1</code>, and <code>::1</code> should bypass the proxy. If the proxy catches them, the local page can time out or turn white.</p>
             <span class="feature-foot" data-i18n="why.card1Foot">LOCAL TRAFFIC / DIRECT</span>
           </article>
           <article class="feature-card feature-card-raised">
             <div class="feature-top"><span class="feature-number">02</span><span class="feature-symbol symbol-blue" aria-hidden="true">↗</span></div>
-            <h3 data-i18n="why.card2Title">Proxy is only half-configured</h3>
-            <p data-i18n="why.card2Body">Environment variables, system proxy settings, and local listening ports can disagree. The launcher reads candidates and tests whether an HTTP proxy is actually usable.</p>
-            <span class="feature-foot" data-i18n="why.card2Foot">PROXY / VERIFY FIRST</span>
+            <h3 data-i18n="why.card2Title">The app needs a usable HTTP proxy</h3>
+            <p data-i18n="why.card2Body">The script checks environment variables, Windows proxy settings, and common local ports. It uses a candidate only after a real HTTP request succeeds.</p>
+            <span class="feature-foot" data-i18n="why.card2Foot">PROXY / TEST IT</span>
           </article>
           <article class="feature-card">
             <div class="feature-top"><span class="feature-number">03</span><span class="feature-symbol symbol-green" aria-hidden="true">↻</span></div>
-            <h3 data-i18n="why.card3Title">Too much manual setup</h3>
-            <p data-i18n="why.card3Body">No more hunting for install paths, toggling TUN, or trying ports. The launcher combines detection, verification, and startup in one action.</p>
-            <span class="feature-foot" data-i18n="why.card3Foot">ONE SCRIPT / LESS FRICTION</span>
+            <h3 data-i18n="why.card3Title">Find, test, launch</h3>
+            <p data-i18n="why.card3Body">The script finds the install path, tests the proxy, and starts the app in one run.</p>
+            <span class="feature-foot" data-i18n="why.card3Foot">ONE SCRIPT / THREE CHECKS</span>
           </article>
         </div>
       </div>
@@ -134,28 +134,28 @@
     <section class="section section-how" id="how">
       <div class="container how-grid">
         <div class="section-heading">
-          <p class="section-kicker" data-i18n="section.howKicker">02 / HOW IT WORKS</p>
-          <h2 data-i18n="how.title">Three steps to a cleaner launch.</h2>
-          <p data-i18n="how.intro">This is not a proxy client and it does not take over your network settings. It prepares a clearer connection environment only for the process that starts Antigravity.exe.</p>
+          <p class="section-kicker" data-i18n="section.howKicker">02 / WHAT IT DOES</p>
+          <h2 data-i18n="how.title">Find the app. Test the proxy. Start Antigravity.</h2>
+          <p data-i18n="how.intro">The script sets proxy variables only for the Antigravity process it starts. Your system proxy and TUN settings stay as they are.</p>
           <a class="text-link" href="https://github.com/BeterXie/antigravity-no-tun/blob/main/README.md" target="_blank" rel="noreferrer"><span data-i18n="how.guide">Read the full guide</span> <span aria-hidden="true">→</span></a>
         </div>
 
         <div class="flow-card">
           <div class="flow-step">
             <span class="flow-index">01</span>
-            <div><span class="flow-label" data-i18n="how.step1Label">DETECT</span><h3 data-i18n="how.step1Title">Find the right app</h3><p data-i18n="how.step1Body">Search common install locations, registry App Paths, and trusted <code>Antigravity*.exe</code> files.</p></div>
+            <div><span class="flow-label" data-i18n="how.step1Label">FIND</span><h3 data-i18n="how.step1Title">Find Antigravity.exe</h3><p data-i18n="how.step1Body">Checks common install folders, App Paths, and matching <code>Antigravity*.exe</code> paths.</p></div>
             <span class="flow-status" data-i18n="how.step1Status">FOUND</span>
           </div>
           <div class="flow-connector" aria-hidden="true"></div>
           <div class="flow-step">
             <span class="flow-index">02</span>
-            <div><span class="flow-label" data-i18n="how.step2Label">VERIFY</span><h3 data-i18n="how.step2Title">Verify a usable proxy</h3><p data-i18n="how.step2Body">Read environment variables, system proxy settings, and local ports, then test HTTP(S) connectivity with a lightweight request.</p></div>
-            <span class="flow-status" data-i18n="how.step2Status">LIVE</span>
+            <div><span class="flow-label" data-i18n="how.step2Label">TEST</span><h3 data-i18n="how.step2Title">Test the proxy</h3><p data-i18n="how.step2Body">Checks environment variables, Windows proxy settings, and local ports, then sends a lightweight HTTP request.</p></div>
+            <span class="flow-status" data-i18n="how.step2Status">WORKS</span>
           </div>
           <div class="flow-connector" aria-hidden="true"></div>
           <div class="flow-step">
             <span class="flow-index">03</span>
-            <div><span class="flow-label" data-i18n="how.step3Label">LAUNCH</span><h3 data-i18n="how.step3Title">Separate local and external traffic</h3><p data-i18n="how.step3Body">Keep local addresses direct. Pass the proxy environment only to the launched app process without writing to the system.</p></div>
+            <div><span class="flow-label" data-i18n="how.step3Label">START</span><h3 data-i18n="how.step3Title">Start the app</h3><p data-i18n="how.step3Body">Keeps <code>localhost</code>, <code>127.0.0.1</code>, and <code>::1</code> direct, then passes the chosen proxy to Antigravity.</p></div>
             <span class="flow-status" data-i18n="how.step3Status">READY</span>
           </div>
         </div>
@@ -165,29 +165,29 @@
     <section class="section section-scope" id="scope">
       <div class="container">
         <div class="section-heading section-heading-centered">
-          <p class="section-kicker" data-i18n="section.scopeKicker">03 / CLEAR SCOPE</p>
-          <h2><span data-i18n="scope.titleLine">NO TUN is the goal,</span><br><span data-i18n="scope.titleSubline">not an absolute promise.</span></h2>
-          <p data-i18n="scope.intro">When your local proxy core provides a usable HTTP(S) proxy, Antigravity can run without relying on TUN mode. The launcher does not disable, modify, or take over your TUN settings.</p>
+          <p class="section-kicker" data-i18n="section.scopeKicker">03 / SCOPE</p>
+          <h2><span data-i18n="scope.titleLine">NO TUN works when</span><br><span data-i18n="scope.titleSubline">a local HTTP(S) proxy responds.</span></h2>
+          <p data-i18n="scope.intro">The launcher passes the working proxy to Antigravity and keeps local addresses direct. Your TUN settings are left alone.</p>
         </div>
 
         <div class="scope-grid">
           <article class="scope-card scope-card-included">
-            <div class="scope-card-head"><span class="scope-icon scope-icon-green" aria-hidden="true">✓</span><span data-i18n="scope.included">Included</span></div>
+            <div class="scope-card-head"><span class="scope-icon scope-icon-green" aria-hidden="true">✓</span><span data-i18n="scope.included">What it does</span></div>
             <ul>
               <li data-i18n="scope.included1">Detect <code>Antigravity.exe</code> automatically</li>
-              <li data-i18n="scope.included2">Find and verify a local HTTP(S) proxy</li>
-              <li data-i18n="scope.included3">Keep a direct path for local addresses</li>
-              <li data-i18n="scope.included4">Works with Windows PowerShell 5.1 and 7</li>
-              <li data-i18n="scope.included5">Does not change system proxy or execution policy</li>
+              <li data-i18n="scope.included2">Check a local HTTP(S) proxy</li>
+              <li data-i18n="scope.included3">Keep local addresses direct</li>
+              <li data-i18n="scope.included4">Run on Windows PowerShell 5.1 and 7</li>
+              <li data-i18n="scope.included5">Leave system proxy and execution policy unchanged</li>
             </ul>
           </article>
           <article class="scope-card scope-card-excluded">
-            <div class="scope-card-head"><span class="scope-icon scope-icon-muted" aria-hidden="true">—</span><span data-i18n="scope.excluded">Not included</span></div>
+            <div class="scope-card-head"><span class="scope-icon scope-icon-muted" aria-hidden="true">—</span><span data-i18n="scope.excluded">The script does not handle</span></div>
             <ul>
               <li data-i18n="scope.excluded1">Antigravity CLI login</li>
-              <li data-i18n="scope.excluded2">Account, password, or token management</li>
-              <li data-i18n="scope.excluded3">Disabling or configuring your TUN mode</li>
-              <li data-i18n="scope.excluded4">Turning a SOCKS5-only proxy into an HTTP proxy</li>
+              <li data-i18n="scope.excluded2">Account, password, or token handling</li>
+              <li data-i18n="scope.excluded3">Changing your TUN settings</li>
+              <li data-i18n="scope.excluded4">Converting SOCKS5 into HTTP</li>
               <li data-i18n="scope.excluded5">Replacing Clash, Mihomo, or another proxy core</li>
             </ul>
           </article>
@@ -199,9 +199,9 @@
       <div class="container">
         <div class="start-card">
           <div>
-            <p class="section-kicker" data-i18n="section.startKicker">READY WHEN YOU ARE</p>
-            <h2 data-i18n="start.title">Put launch on one script.</h2>
-            <p data-i18n="start.intro">Download it, choose “Run with PowerShell,” or execute the command below in PowerShell.</p>
+            <p class="section-kicker" data-i18n="section.startKicker">START HERE</p>
+            <h2 data-i18n="start.title">Run the launcher in PowerShell.</h2>
+            <p data-i18n="start.intro">Download the script, choose “Run with PowerShell,” or run the command below.</p>
           </div>
           <div class="start-actions">
             <div class="code-line" aria-label="PowerShell launch command" data-i18n-aria-label="start.commandLabel"><span class="code-prompt">PS&gt;</span><code>.\Start-Antigravity.ps1</code><button class="copy-button" type="button" data-copy=".\Start-Antigravity.ps1" aria-label="Copy launch command" data-i18n-aria-label="start.copyLabel" data-i18n="start.copy">Copy</button></div>
@@ -219,7 +219,7 @@
       <div class="footer-links"><span data-i18n="footer.project">Project</span><a href="https://github.com/BeterXie/antigravity-no-tun/blob/main/README.md" target="_blank" rel="noreferrer">README</a><a href="https://github.com/BeterXie/antigravity-no-tun/releases" target="_blank" rel="noreferrer" data-i18n="footer.releases">Releases</a><a href="https://github.com/BeterXie/antigravity-no-tun/issues" target="_blank" rel="noreferrer" data-i18n="footer.issues">Issues</a></div>
       <div class="footer-links"><span data-i18n="footer.version">Version</span><a href="#scope" data-i18n="footer.guiOnly">GUI only</a><a href="#how">PowerShell 5.1+</a><a href="#top" data-i18n="footer.noTun">NO TUN mode</a></div>
     </div>
-    <div class="container footer-bottom"><span>MIT License · <span id="current-year">2026</span> BeterXie</span><span data-i18n="footer.tagline">Made for a calmer launch.</span></div>
+    <div class="container footer-bottom"><span>MIT License · <span id="current-year">2026</span> BeterXie</span><span data-i18n="footer.tagline">Find the app. Test the proxy. Start.</span></div>
   </footer>
 </body>
 </html>
