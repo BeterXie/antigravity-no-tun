@@ -1,19 +1,7 @@
 $ErrorActionPreference = 'Stop'
 
-# If launched by Windows PowerShell, hand off to PowerShell 7 without changing
-# the machine or user ExecutionPolicy.
-if ($PSEdition -ne 'Core' -or $PSVersionTable.PSVersion.Major -lt 7) {
-    $pwsh = Get-Command 'pwsh.exe' -ErrorAction SilentlyContinue
-    if (-not $pwsh) {
-        Write-Error '未找到 PowerShell 7（pwsh.exe）。请先安装 PowerShell 7。'
-        exit 1
-    }
-
-    & $pwsh.Source -NoProfile -File $PSCommandPath @args
-    $exitCode = $LASTEXITCODE
-    if ($null -eq $exitCode) { $exitCode = 0 }
-    exit $exitCode
-}
+# Compatible with the built-in Windows PowerShell 5.1 and PowerShell 7.
+# The script does not change the machine or user ExecutionPolicy.
 
 $proxyProbeUrl = 'https://www.googleapis.com/generate_204'
 $noProxyHosts = @('localhost', '127.0.0.1', '::1')

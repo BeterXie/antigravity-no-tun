@@ -21,7 +21,7 @@
 
 脚本会先显示识别到的 Antigravity 路径和可用代理。首次加载可能需要等待约一分钟。
 
-需要 PowerShell 7。如果系统先用 Windows PowerShell 打开脚本，脚本会自动转交给 `pwsh.exe`。
+脚本兼容 Windows 自带的 Windows PowerShell 5.1，也兼容 PowerShell 7，不要求额外安装 PowerShell 7。Windows 10/11 通常已经自带 Windows PowerShell 5.1。
 
 ## 代理识别顺序
 
