@@ -2,6 +2,8 @@
 
 一个面向 Windows 的启动脚本：在存在可用本地 HTTP(S) 代理时，不需要开启 TUN 模式也能正常启动和使用 `Antigravity.exe` 图形客户端。
 
+项目主页：[GitHub Pages](https://beterxie.github.io/antigravity-no-tun/)
+
 ## 为什么写这个脚本
 
 我们在 Windows 上使用 Antigravity 时遇到过这样的情况：代理节点本身可用，但 Antigravity 仍然可能白屏、长时间加载，或者进入界面后语言服务无法正常连接。尤其是在切换系统代理、Clash/Mihomo 等本地代理端口和 TUN 模式时，手工排查安装路径、代理端口和进程环境比较繁琐。
