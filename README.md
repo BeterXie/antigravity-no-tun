@@ -43,11 +43,11 @@
 
 这个入口使用 Windows 自带的 Windows PowerShell 5.1，不要求安装 PowerShell 7。`Start-Antigravity.vbs` 和 `Start-Antigravity.ps1` 必须放在同一个文件夹中。
 
-如果你只下载了 `Start-Antigravity.ps1`，也可以右键脚本，选择“使用 PowerShell 运行”。
+请双击 `Start-Antigravity.vbs`，不要直接双击或右键运行 `.ps1`。VBS 入口会为当前 PowerShell 进程使用 Bypass，不需要手动修改执行策略。
 
 脚本会先显示识别到的 Antigravity 路径和可用代理。首次加载可能需要等待约一分钟。
 
-如果右键运行没有反应，优先使用压缩包里的 `Start-Antigravity.vbs`。如果仍要运行 `.ps1`，可以右键 `Start-Antigravity.ps1`，打开“属性”，勾选“解除锁定”后再运行。也可以在 PowerShell 中执行 `Unblock-File -LiteralPath .\Start-Antigravity.ps1`，然后运行脚本。这只移除当前文件的 Internet 下载标记，不会修改执行策略。若 Antigravity 已经在运行，脚本会跳过重复启动。
+如果双击 VBS 仍被 Windows SmartScreen 或组织策略拦截，那是系统对互联网脚本的安全限制，未签名脚本无法在启动前自动移除这个限制。若要排查 `.ps1` 本身，可在可信的 PowerShell 会话中使用 `Unblock-File`；这只移除当前文件的 Internet 下载标记，不会修改执行策略。若 Antigravity 已经在运行，启动器会跳过重复启动。
 
 脚本兼容 Windows 自带的 Windows PowerShell 5.1，也兼容 PowerShell 7，不要求额外安装 PowerShell 7。Windows 10/11 通常已经自带 Windows PowerShell 5.1。
 
