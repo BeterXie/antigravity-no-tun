@@ -138,7 +138,7 @@ function Resolve-AntigravityExecutable {
         Select-Object -First 1
 
     if (-not $selected) {
-        throw '未找到 Antigravity。请先安装官方 Windows 版本。'
+        throw 'Antigravity.exe was not found. Install the official Windows version first.'
     }
 
     return $selected
@@ -150,7 +150,7 @@ function Add-ConfiguredProxies {
     foreach ($name in @('HTTPS_PROXY', 'HTTP_PROXY', 'ALL_PROXY', 'https_proxy', 'http_proxy', 'all_proxy')) {
         $variable = Get-Item -LiteralPath ("Env:{0}" -f $name) -ErrorAction SilentlyContinue
         if ($variable) {
-            Add-ProxyCandidate -List $List -Value ([string]$variable.Value) -Source "环境变量 $name"
+            Add-ProxyCandidate -List $List -Value ([string]$variable.Value) -Source "Environment variable $name"
         }
     }
 
@@ -159,7 +159,7 @@ function Add-ConfiguredProxies {
         try {
             $settings = Get-ItemProperty -LiteralPath $internetSettings
             if (-not [string]::IsNullOrWhiteSpace([string]$settings.ProxyServer)) {
-                $source = if ([int]$settings.ProxyEnable -eq 1) { 'Windows 系统代理' } else { 'Windows 已保存代理' }
+                $source = if ([int]$settings.ProxyEnable -eq 1) { 'Windows system proxy' } else { 'Saved Windows proxy' }
                 Add-ProxyCandidate -List $List -Value ([string]$settings.ProxyServer) -Source $source
             }
         } catch {
@@ -178,7 +178,7 @@ function Add-ConfiguredProxies {
                 Add-ProxyCandidate `
                     -List $List `
                     -Value ("http://127.0.0.1:{0}" -f $connection.LocalPort) `
-                    -Source ("本机代理进程 {0}" -f $process.ProcessName)
+                    -Source ("Local proxy process {0}" -f $process.ProcessName)
             }
         } catch {
             # Ignore system-owned or exited listeners.
@@ -187,7 +187,7 @@ function Add-ConfiguredProxies {
 
     foreach ($port in @(7890, 7897, 7898, 7899, 10809, 8080, 1080)) {
         if ($listenConnections | Where-Object { $_.LocalPort -eq $port }) {
-            Add-ProxyCandidate -List $List -Value ("http://127.0.0.1:{0}" -f $port) -Source '常见本机代理端口'
+            Add-ProxyCandidate -List $List -Value ("http://127.0.0.1:{0}" -f $port) -Source 'Common local proxy port'
         }
     }
 }
@@ -214,7 +214,7 @@ function Test-HttpProxy {
 
 try {
     $app = Resolve-AntigravityExecutable
-    Write-Host ("已识别 Antigravity {0}: {1}" -f $app.Version, $app.Path) -ForegroundColor Cyan
+    Write-Host ("Found Antigravity {0}: {1}" -f $app.Version, $app.Path) -ForegroundColor Cyan
 
     $running = @(
         Get-Process -Name 'Antigravity' -ErrorAction SilentlyContinue |
@@ -224,7 +224,7 @@ try {
     )
 
     if ($running.Count -gt 0) {
-        Write-Warning 'Antigravity 已经在运行，未重复启动。'
+        Write-Warning 'Antigravity is already running; skipped duplicate launch.'
         exit 0
     }
 
@@ -232,7 +232,7 @@ try {
     $workingProxy = $null
 
     foreach ($candidate in $proxyCandidates) {
-        Write-Host ("检测代理 {0}（{1}）..." -f (Get-ProxyLabel $candidate.Uri), $candidate.Source) -ForegroundColor DarkGray
+        Write-Host ("Checking proxy {0} ({1})..." -f (Get-ProxyLabel $candidate.Uri), $candidate.Source) -ForegroundColor DarkGray
         if (Test-HttpProxy -Uri $candidate.Uri -ProbeUrl $proxyProbeUrl) {
             $workingProxy = $candidate
             break
@@ -243,12 +243,12 @@ try {
         $env:HTTP_PROXY = $workingProxy.Uri
         $env:HTTPS_PROXY = $workingProxy.Uri
         $env:ALL_PROXY = $workingProxy.Uri
-        Write-Host ("已识别可用代理：{0}（{1}）" -f (Get-ProxyLabel $workingProxy.Uri), $workingProxy.Source) -ForegroundColor Green
+        Write-Host ("Using working proxy: {0} ({1})" -f (Get-ProxyLabel $workingProxy.Uri), $workingProxy.Source) -ForegroundColor Green
     } else {
         foreach ($name in @('HTTP_PROXY', 'HTTPS_PROXY', 'ALL_PROXY', 'http_proxy', 'https_proxy', 'all_proxy')) {
             Remove-Item -LiteralPath ("Env:{0}" -f $name) -ErrorAction SilentlyContinue
         }
-        Write-Warning '未检测到可用 HTTP 代理，将尝试使用系统直连/TUN。'
+        Write-Warning 'No working HTTP proxy found; trying system direct/TUN.'
     }
 
     $existingNoProxy = @($env:NO_PROXY, $env:no_proxy) |
@@ -265,7 +265,7 @@ try {
         -ArgumentList @('--no-proxy-server') `
         -WorkingDirectory (Split-Path -Parent $app.Path) | Out-Null
 
-    Write-Host 'Antigravity 已启动。首次加载可能需要等待约 1 分钟。' -ForegroundColor Green
+    Write-Host 'Antigravity started. The first load may take about 1 minute.' -ForegroundColor Green
 } catch {
     Write-Error $_.Exception.Message
     exit 1
