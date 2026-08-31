@@ -87,7 +87,7 @@
     'scope.excluded4': '把 SOCKS5 转成 HTTP',
     'scope.excluded5': '替代 Clash、Mihomo 或其他代理核心',
     'section.startKicker': '从这里开始',
-    'start.title': '用 PowerShell 运行启动器。',
+    'start.title': '双击一次即可启动。',
     'start.intro': '下载启动包，解压后双击 Start-Antigravity.vbs。压缩包里已经包含 PowerShell 脚本。',
     'start.note': 'VBS 启动入口使用 Windows PowerShell 5.1，不需要安装 PowerShell 7。两个文件需要放在同一个文件夹中。',
     'start.commandLabel': '一键启动文件',
