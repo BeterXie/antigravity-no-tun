@@ -38,12 +38,16 @@
 ## 使用
 
 1. 确保 Clash/Mihomo 或其他代理核心正在运行。
-2. 下载 `Start-Antigravity.ps1`。
-3. 右键脚本，选择“使用 PowerShell 运行”。
+2. 从 [Releases](https://github.com/BeterXie/antigravity-no-tun/releases/latest) 下载 `Start-Antigravity.zip` 并解压。
+3. 双击解压后的 `Start-Antigravity.vbs`。
+
+这个入口使用 Windows 自带的 Windows PowerShell 5.1，不要求安装 PowerShell 7。`Start-Antigravity.vbs` 和 `Start-Antigravity.ps1` 必须放在同一个文件夹中。
+
+如果你只下载了 `Start-Antigravity.ps1`，也可以右键脚本，选择“使用 PowerShell 运行”。
 
 脚本会先显示识别到的 Antigravity 路径和可用代理。首次加载可能需要等待约一分钟。
 
-如果右键运行没有反应，右键 `Start-Antigravity.ps1`，打开“属性”，勾选“解除锁定”后再运行。也可以在 PowerShell 中执行 `Unblock-File -LiteralPath .\Start-Antigravity.ps1`，然后运行脚本。这只移除当前文件的 Internet 下载标记，不会修改执行策略。若 Antigravity 已经在运行，脚本会跳过重复启动。
+如果右键运行没有反应，优先使用压缩包里的 `Start-Antigravity.vbs`。如果仍要运行 `.ps1`，可以右键 `Start-Antigravity.ps1`，打开“属性”，勾选“解除锁定”后再运行。也可以在 PowerShell 中执行 `Unblock-File -LiteralPath .\Start-Antigravity.ps1`，然后运行脚本。这只移除当前文件的 Internet 下载标记，不会修改执行策略。若 Antigravity 已经在运行，脚本会跳过重复启动。
 
 脚本兼容 Windows 自带的 Windows PowerShell 5.1，也兼容 PowerShell 7，不要求额外安装 PowerShell 7。Windows 10/11 通常已经自带 Windows PowerShell 5.1。
 
