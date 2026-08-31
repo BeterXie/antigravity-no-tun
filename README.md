@@ -43,6 +43,8 @@
 
 脚本会先显示识别到的 Antigravity 路径和可用代理。首次加载可能需要等待约一分钟。
 
+如果右键运行没有反应，右键 `Start-Antigravity.ps1`，打开“属性”，勾选“解除锁定”后再运行。也可以在 PowerShell 中执行 `Unblock-File -LiteralPath .\Start-Antigravity.ps1`，然后运行脚本。这只移除当前文件的 Internet 下载标记，不会修改执行策略。若 Antigravity 已经在运行，脚本会跳过重复启动。
+
 脚本兼容 Windows 自带的 Windows PowerShell 5.1，也兼容 PowerShell 7，不要求额外安装 PowerShell 7。Windows 10/11 通常已经自带 Windows PowerShell 5.1。
 
 ## Antigravity CLI 登录支持

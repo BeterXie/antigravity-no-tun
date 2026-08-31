@@ -89,6 +89,7 @@
     'section.startKicker': '从这里开始',
     'start.title': '用 PowerShell 运行启动器。',
     'start.intro': '下载脚本后选择“使用 PowerShell 运行”，也可以执行下面的命令。',
+    'start.note': '如果没有反应，先打开文件属性并勾选“解除锁定”。如果 Antigravity 已经打开，启动器不会重复启动。',
     'start.commandLabel': 'PowerShell 启动命令',
     'start.copyLabel': '复制启动命令',
     'start.copy': '复制',
